@@ -1,0 +1,29 @@
+app = 'fly-scraper-demo'
+primary_region = 'iad'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[processes]
+  app = 'python app.py'
+
+[env]
+  # Add environment variables here if needed
+  SCRAPER_INTERVAL_HOURS = '1'
+
+[mounts]
+  source = 'scraper_data'
+  destination = '/app/data'
+
+# Enable fly volumes to store scraped data
+[volumes]
+  [volumes.scraper_data]
+    size = '1' # 1GB volume

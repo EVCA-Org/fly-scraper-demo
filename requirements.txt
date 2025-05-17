@@ -5,3 +5,4 @@ selenium==4.17.2
 webdriver-manager==4.0.1
 playwright==1.41.2
 lxml==4.9.3
+supabase==2.3.5

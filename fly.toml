@@ -16,14 +16,14 @@ primary_region = 'iad'
   app = 'python app.py'
 
 [env]
-  # Add environment variables here if needed
   SCRAPER_INTERVAL_HOURS = '1'
+  # Supabase environment variables will be set using secrets
 
 [mounts]
   source = 'scraper_data'
   destination = '/app/data'
 
-# Enable fly volumes to store scraped data
+# Enable fly volumes to store scraped data as backup
 [volumes]
   [volumes.scraper_data]
     size = '1' # 1GB volume

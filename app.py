@@ -49,7 +49,7 @@ class WebScraper:
             os.makedirs(self.data_dir)
     
     def scrape_website(self, url):
-        Scrape a website and return the data
+        """Scrape a website and return the data"""
         try:
             logger.info(f'Scraping {url}')
             response = requests.get(url, headers=self.headers)
